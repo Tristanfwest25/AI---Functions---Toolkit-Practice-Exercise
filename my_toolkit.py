@@ -3,13 +3,13 @@
 
 
 def calculate_average(numbers):
-    # Takes a list of numbers, returns the average. Returns 0 if the list is empty.
+    """Takes a list of numbers, returns the average. Returns 0 if the list is empty."""
     if not numbers:
         return 0
     return sum(numbers) / len(numbers)
 
 def find_max_and_min(numbers):
-    # Takes a list of numbers, returns a tuple (max_value, min_value). Do NOT use the built-in max() and min()
+    """Takes a list of numbers, returns a tuple (max_value, min_value). Do NOT use the built-in max() and min()"""
     if not numbers:
         return None, None
     #loop through numbers to find max and min
@@ -23,7 +23,7 @@ def find_max_and_min(numbers):
     return max_num, min_num
 
 def count_occurrences(items, target):
-    # Takes a list and a target value, returns how many times the target appears in the list.
+    """Takes a list and a target value, returns how many times the target appears in the list."""
     count = 0
     for item in items:
         if item == target:
@@ -31,12 +31,12 @@ def count_occurrences(items, target):
     return count
 
 def is_palindrome(text):
-    #  Takes a string, returns True if it reads the same forward and backward (case-insensitive, ignoring spaces).
+    """Takes a string, returns True if it reads the same forward and backward (case-insensitive, ignoring spaces)."""
     cleaned_text = ''.join(char.lower() for char in text if char.isalnum())
     return cleaned_text == cleaned_text[::-1]
 
 def create_report(title, scores):
-    #  Takes a report title and a list of scores. Uses calculate_average and find_max_and_min internally. Returns a formatted string report with the title, average score, max score, and min score.
+    """Takes a report title and a list of scores. Uses calculate_average and find_max_and_min internally. Returns a formatted string report with the title, average score, max score, and min score."""
     average_score = calculate_average(scores)
     max_score, min_score = find_max_and_min(scores)
     report = f"Report: {title}\n"
